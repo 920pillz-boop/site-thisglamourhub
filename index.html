@@ -92,7 +92,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 /* -- PLATFORMS -- */
 .platforms{padding:22px 0;border-bottom:1px solid var(--gray2);overflow:hidden}
 .plat-track{display:flex;gap:56px;align-items:center;width:max-content;animation:marquee 20s linear infinite;will-change:transform}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-33.333%)}}
 .plat-item{font-weight:800;font-size:1rem;white-space:nowrap;letter-spacing:-.01em;opacity:.55;transition:opacity .3s;cursor:default;flex-shrink:0}
 .plat-item:hover{opacity:.9}
 .plat-item.of{color:#00ADE8}.plat-item.rd{color:#FF4500}.plat-item.ph{color:#FF9000}.plat-item.yt{color:#FF0000}.plat-item.tt{color:#000}
@@ -232,8 +232,8 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .plan-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
 .plan-list li{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--text2)}
 .plan-dot{color:var(--blue);font-size:1.3rem;flex-shrink:0;margin-top:-2px}
-.plan-img{position:relative;overflow:hidden}
-.plan-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.plan-img{position:relative;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
+.plan-img img{width:100%;height:100%;object-fit:contain;padding:28px;display:block;transition:transform .7s ease}
 .plan-card:hover .plan-img img{transform:scale(1.06)}
 
 /* -- FAQ -- */
@@ -535,12 +535,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <span class="highlight">Fansly-агентством</span>
       </h1>
       <p class="hero-desc" style="animation:fadeUp .9s .12s ease both" data-ru="thisglamourhub — профессиональное агентство полного цикла для контент-креаторов Fansly. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:" data-en="thisglamourhub — a full-cycle professional agency for Fansly content creators. We handle all aspects of managing and promoting your account: from content strategy to 24/7 chatting with subscribers. Focus on creativity — we'll ensure your success:">thisglamourhub — профессиональное агентство полного цикла для контент-креаторов Fansly. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:</p>
-      <div class="hero-feats" style="animation:fadeUp .9s .22s ease both">
-        <div class="hf"><div class="hf-ico">🏆</div><span data-ru="Вхождение в топ" data-en="Top ranking">Вхождение в топ</span></div>
-        <div class="hf"><div class="hf-ico">⟳</div><span data-ru="Поддержка 24/7" data-en="24/7 Support">Поддержка 24/7</span></div>
-        <div class="hf"><div class="hf-ico">$</div><span data-ru="Без предоплат" data-en="No prepayments">Без предоплат</span></div>
-      </div>
-      <div style="animation:fadeUp .9s .32s ease both">
+      <div style="animation:fadeUp .9s .22s ease both">
         <a href="https://t.me/ownagency_bot" target="_blank" class="hero-btn">
           <div class="tg-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
           <span data-ru="Начать зарабатывать больше" data-en="Start earning more">Начать зарабатывать больше</span>
@@ -554,6 +549,13 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <div class="platforms">
   <div style="overflow:hidden">
     <div class="plat-track" id="platTrack">
+      <span class="plat-item of">Fansly</span>
+      <span class="plat-item rd">Reddit</span>
+      <span class="plat-item ph">PornHub</span>
+      <span class="plat-item yt">YouTube</span>
+      <span class="plat-item tt">TikTok</span>
+      <span class="plat-item of">Instagram</span>
+      <span class="plat-item rd">Telegram</span>
       <span class="plat-item of">Fansly</span>
       <span class="plat-item rd">Reddit</span>
       <span class="plat-item ph">PornHub</span>
@@ -617,7 +619,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
           <div class="slval" id="c-content-val">80 фото/нед</div>
         </div>
         <div class="calc-field">
-          <label data-ru="Есть ли опыт в Fansly/Fansly и других?" data-en="Do you have Fansly/Fansly experience?">Есть ли опыт в Fansly/Fansly и других?</label>
+          <label data-ru="Есть ли опыт в Fansly и других?" data-en="Do you have Fansly experience?">Есть ли опыт в Fansly и других?</label>
           <div class="slider-row"><span data-ru="0 Мес." data-en="0 Mo.">0 Мес.</span><span data-ru="24 Мес." data-en="24 Mo.">24 Мес.</span></div>
           <input type="range" class="cslider" id="c-exp" min="0" max="24" value="4">
           <div class="slval" id="c-exp-val">4 мес. опыта</div>
@@ -649,7 +651,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
     <div class="prob-grid">
       <div class="prob-left">
         <h2 class="rv" data-ru="Типичные проблемы моделей<br><span>и контент-креаторов</span>" data-en="Typical problems of models<br><span>and content creators</span>">Типичные проблемы моделей<br><span>и контент-креаторов</span></h2>
-        <p class="rv" data-ru="Большинство авторов контента Fansly/Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка." data-en="Most Fansly/Fansly content creators face the same challenges: low reach, difficulty attracting generous subscribers, lack of time for chatting and social media promotion. Without a professional team, it's hard to compete with top models and unlock your full earning potential.">Большинство авторов контента Fansly/Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка.</p>
+        <p class="rv" data-ru="Большинство авторов контента Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка." data-en="Most Fansly content creators face the same challenges: low reach, difficulty attracting generous subscribers, lack of time for chatting and social media promotion. Without a professional team, it's hard to compete with top models and unlock your full earning potential.">Большинство авторов контента Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка.</p>
         <div class="prob-list">
           <div class="prob-item rv"><div class="prob-ico">✕</div><div class="prob-text" data-ru="Непонятно, с чего начать" data-en="Don't know where to start">Непонятно, с чего начать</div></div>
           <div class="prob-item rv"><div class="prob-ico">✕</div><div class="prob-text" data-ru="Нет стабильного потока подписчиков" data-en="No steady subscriber flow">Нет стабильного потока подписчиков</div></div>
@@ -673,7 +675,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <h2 data-ru="Что мы <span>предлагаем?</span>" data-en="What we <span>offer?</span>">Что мы <span>предлагаем?</span></h2>
       </div>
       <div class="rv-r">
-        <p data-ru="thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly/Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:" data-en="thisglamourhub provides a full range of professional Fansly/Fansly account management services. Our team of specialists works across different time zones, ensuring 24/7 support and promotion. We create personalized strategies for each creator, considering goals and audience:">thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly/Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:</p>
+        <p data-ru="thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:" data-en="thisglamourhub provides a full range of professional Fansly account management services. Our team of specialists works across different time zones, ensuring 24/7 support and promotion. We create personalized strategies for each creator, considering goals and audience:">thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:</p>
       </div>
     </div>
     <div class="srv-grid">
@@ -728,7 +730,6 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Полностью прозрачные условия — никаких стартовых взносов и скрытых платежей." data-en="Fully transparent terms — no upfront fees or hidden payments.">Полностью прозрачные условия — никаких стартовых взносов и скрытых платежей.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="В дополнение к комиссии могут запрашивать отдельную оплату различных услуг." data-en="In addition to commission, they may charge separately for various services.">В дополнение к комиссии могут запрашивать отдельную оплату различных услуг.</span></div></div>
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Персональный подход и индивидуальные стратегии роста." data-en="Personal approach and individual growth strategies.">Персональный подход и индивидуальные стратегии роста.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="Шаблонные решения." data-en="Template solutions.">Шаблонные решения.</span></div></div>
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Комплексные услуги: от персонального брендинга до эксклюзивных воронок продаж. Работа с личным менеджером." data-en="Comprehensive services: from personal branding to exclusive sales funnels. Working with a personal manager.">Комплексные услуги: от персонального брендинга до эксклюзивных воронок продаж. Работа с личным менеджером.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="Точечные услуги без закрепления постоянной команды." data-en="Selective services without a dedicated team.">Точечные услуги без закрепления постоянной команды.</span></div></div>
-      <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Есть реальный офис в Санкт-Петербурге, где можно встретиться и пообщаться с командой." data-en="We have a real office in Saint Petersburg where you can meet and talk with the team.">Есть реальный офис в Санкт-Петербурге, где можно встретиться и пообщаться с командой.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="В большинстве случаев виртуальные и не имеют офиса." data-en="In most cases virtual and have no office.">В большинстве случаев виртуальные и не имеют офиса.</span></div></div>
       <div class="cmp-footer">
         <div class="cmp-footer-text">
           <p data-ru="Мы проанализировали множество агентств и предлагаем наиболее интересные условия на рынке. Всё предельно прозрачно, работаем на результат и ориентируемся на долгосрочное сотрудничество." data-en="We've analyzed many agencies and offer the most attractive terms on the market. Everything is fully transparent, we work for results and focus on long-term partnerships.">Мы проанализировали множество агентств и предлагаем наиболее интересные условия на рынке. Всё предельно прозрачно, работаем на результат и ориентируемся на долгосрочное сотрудничество.</p>
@@ -774,7 +775,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="plan-left">
         <h3 data-ru="«Полное продвижение» (аутсорсинг аккаунта) — <span class='blue'>для максимального роста доходов.</span>" data-en="«Full promotion» (account outsourcing) — <span class='blue'>for maximum income growth.</span>">«Полное продвижение» (аутсорсинг аккаунта) — <span class="blue">для максимального роста доходов.</span></h3>
         <p data-ru="Полное ведение аккаунта и максимальная монетизация. Берём на себя чаттинг, маркетинг и аналитику. Через два месяца сотрудничества за свой счёт подключаем ведение социальных сетей и организовываем фотосъёмки." data-en="Full account management and maximum monetization. We handle chatting, marketing, and analytics. After two months of collaboration, we cover social media management and organize photoshoots at our expense.">Полное ведение аккаунта и максимальная монетизация. Берём на себя чаттинг, маркетинг и аналитику. Через два месяца сотрудничества за свой счёт подключаем ведение социальных сетей и организовываем фотосъёмки.</p>
-        <p data-ru="Все услуги, оказываемые по продвижению и ведению аккаунта Fansly/Fansly, осуществляются без доплат и скрытых комиссий, в том числе:" data-en="All services for promoting and managing a Fansly/Fansly account are provided without additional charges or hidden fees, including:">Все услуги, оказываемые по продвижению и ведению аккаунта Fansly/Fansly, осуществляются без доплат и скрытых комиссий, в том числе:</p>
+        <p data-ru="Все услуги, оказываемые по продвижению и ведению аккаунта Fansly, осуществляются без доплат и скрытых комиссий, в том числе:" data-en="All services for promoting and managing a Fansly account are provided without additional charges or hidden fees, including:">Все услуги, оказываемые по продвижению и ведению аккаунта Fansly, осуществляются без доплат и скрытых комиссий, в том числе:</p>
         <ul class="plan-list">
           <li><span class="plan-dot">●</span><span data-ru="Ведение Instagram/TikTok" data-en="Instagram/TikTok management">Ведение Instagram/TikTok</span></li>
           <li><span class="plan-dot">●</span><span data-ru="Личный ассистент" data-en="Personal assistant">Личный ассистент</span></li>
@@ -836,12 +837,12 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
   <div class="container">
     <div class="cta-block">
       <div class="cta-left">
-        <h2 data-ru="Готова стать следующей ТОП-моделью Fansly/Fansly?" data-en="Ready to become the next TOP Fansly/Fansly model?">Готова стать следующей ТОП-моделью Fansly/Fansly?</h2>
+        <h2 data-ru="Готова стать следующей ТОП-моделью Fansly?" data-en="Ready to become the next TOP Fansly model?">Готова стать следующей ТОП-моделью Fansly?</h2>
         <p data-ru="Отправь анкету в Telegram-бот, и наш HR-менеджер свяжется с тобой. Расскажем, как можно увеличить доходы с первого месяца. Полная конфиденциальность гарантирована. Укажи в боте:" data-en="Send your application via the Telegram bot, and our HR manager will contact you. We'll tell you how to increase income from the first month. Full confidentiality guaranteed. In the bot, specify:">Отправь анкету в Telegram-бот, и наш HR-менеджер свяжется с тобой. Расскажем, как можно увеличить доходы с первого месяца. Полная конфиденциальность гарантирована. Укажи в боте:</p>
         <div class="cta-list">
           <div class="cta-item"><span data-ru="● Имя" data-en="● Name">● Имя</span></div>
           <div class="cta-item"><span data-ru="● Желаемый доход" data-en="● Desired income">● Желаемый доход</span></div>
-          <div class="cta-item"><span data-ru="● Есть ли аккаунт Fansly/OF" data-en="● Do you have a Fansly/OF account">● Есть ли аккаунт Fansly/OF</span></div>
+          <div class="cta-item"><span data-ru="● Есть ли аккаунт Fansly" data-en="● Do you have a Fansly account">● Есть ли аккаунт Fansly</span></div>
           <div class="cta-item"><span data-ru="● Цели" data-en="● Goals">● Цели</span></div>
         </div>
         <p class="cta-note" data-ru="Заполни анкету и начни путь к финансовой независимости уже сейчас!" data-en="Fill out the application and start your path to financial independence now!">Заполни анкету и начни путь к финансовой независимости уже сейчас!</p>
@@ -899,7 +900,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
     </div>
-    <div class="fbottom" data-ru="©2026 thisglamourhub. Fansly &amp; Fansly Агентство для моделей и креаторов" data-en="©2026 thisglamourhub. Fansly &amp; Fansly Agency for models and creators">©2026 thisglamourhub. Fansly &amp; Fansly Агентство для моделей и креаторов</div>
+    <div class="fbottom" data-ru="©2026 thisglamourhub. Fansly Агентство для моделей и креаторов" data-en="©2026 thisglamourhub. Fansly Agency for models and creators">©2026 thisglamourhub. Fansly Агентство для моделей и креаторов</div>
   </div>
 </footer>
 
