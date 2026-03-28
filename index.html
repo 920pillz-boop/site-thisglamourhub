@@ -74,7 +74,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 
 /* -- HERO -- */
 .hero-wrap{position:relative;overflow:hidden;min-height:calc(100vh - 62px)}
-.hero-img{position:absolute;inset:0;background:url('img/hero.png') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out}
+.hero-img{position:absolute;inset:-30% 0 0 0;bottom:0;background:url('img/hero.png') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out;will-change:transform}
 .hero-img.loaded{transform:scale(1)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.15) 100%)}
 .hero-inner{position:relative;z-index:1;padding:80px 0 72px}
@@ -659,7 +659,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
       <div class="prob-img rv-r">
-        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=85&fit=crop" alt="Content creator challenges" loading="lazy">
+        <img src="img/problems.png" alt="Content creator challenges" loading="lazy">
       </div>
     </div>
   </div>
@@ -705,7 +705,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="proc-phone rv-r">
         <div class="proc-phone-glow"></div>
         <div class="proc-phone-img">
-          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=85&fit=crop" alt="Analytics dashboard" loading="lazy">
+          <video src="img/process.mp4" autoplay loop muted playsinline style="width:100%;height:520px;object-fit:cover;display:block"></video>
         </div>
       </div>
     </div>
@@ -783,7 +783,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="btn-blue" style="text-decoration:none" data-ru="Начать работу" data-en="Get started">Начать работу</a>
       </div>
       <div class="plan-img">
-        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=85&fit=crop" alt="Partnership collaboration" loading="lazy">
+        <img src="img/plan.png" alt="Partnership plan" loading="lazy">
       </div>
     </div>
   </div>
@@ -853,7 +853,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="cta-btn" style="text-decoration:none" data-ru="✈ Начать зарабатывать больше" data-en="✈ Start earning more">✈ Начать зарабатывать больше</a>
       </div>
       <div class="cta-right">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700&q=85&fit=crop" alt="Confident woman" loading="lazy">
+        <img src="img/cta.jpg" alt="Top model" loading="lazy">
       </div>
     </div>
   </div>
@@ -965,7 +965,9 @@ window.addEventListener('scroll', () => {
 const heroImg = document.getElementById('heroImg');
 setTimeout(() => heroImg.classList.add('loaded'), 100);
 window.addEventListener('scroll', () => {
-  heroImg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1)`;
+  const maxScroll = window.innerHeight;
+  const scrollY = Math.min(window.scrollY, maxScroll);
+  heroImg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.05)`;
 });
 
 // -- Set random model count on each page load (400-600) --
