@@ -74,7 +74,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 
 /* -- HERO -- */
 .hero-wrap{position:relative;overflow:hidden;min-height:calc(100vh - 62px)}
-.hero-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1600&q=80&fit=crop') center top/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out}
+.hero-img{position:absolute;inset:0;background:url('img/hero.png') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out}
 .hero-img.loaded{transform:scale(1)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.15) 100%)}
 .hero-inner{position:relative;z-index:1;padding:80px 0 72px}
@@ -327,23 +327,174 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 .btn-outline:hover{background:var(--blue);color:#fff;box-shadow:var(--shb)}
 
 /* -- RESPONSIVE -- */
+
+/* Large desktop */
+@media(min-width:1400px){
+  .container{max-width:1200px}
+  .hero-inner h1{font-size:4.2rem}
+  .srv-grid{gap:22px}
+}
+@media(min-width:1600px){
+  .container{max-width:1320px}
+  .hero-inner{padding:100px 0 90px}
+  .counter-strip-inner{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Tablet landscape */
+@media(max-width:1080px){
+  .container{padding:0 24px}
+  section{padding:64px 0}
+  .prob-grid,.proc-grid,.res-grid{gap:40px}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+  .cta-block{grid-template-columns:1fr 1fr}
+  .cta-left{padding:40px 36px}
+  .plan-left{padding:36px}
+}
+
+/* Tablet portrait */
 @media(max-width:960px){
   .nav-links,.lang-btn{display:none}
   .hamburger{display:flex}
-  .hero-feats,.prob-grid,.srv-intro,.proc-grid,.cmp-section .tw,.res-grid,.plan-card,.cta-block,.footer-grid{grid-template-columns:1fr}
+  .prob-grid,.srv-intro,.proc-grid,.res-grid,.plan-card,.cta-block{grid-template-columns:1fr}
   .srv-grid{grid-template-columns:1fr 1fr}
   .calc-grid{grid-template-columns:1fr 1fr}
   .soc-grid{grid-template-columns:1fr 1fr}
   .cta-right{min-height:280px}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-inner h1{font-size:clamp(1.8rem,5vw,3rem)}
+  .hero-desc{font-size:.93rem}
+  .hero-inner{padding:56px 0 48px}
+  .prob-img img{height:320px}
+  .res-img img{height:320px}
+  .proc-phone{width:220px}
+  .proc-phone-img img{height:440px}
+  .plan-img{max-height:360px;overflow:hidden}
+  .plan-img img{height:360px}
+  .cta-left{padding:36px 28px}
+  .cta-guarantees{grid-template-columns:1fr 1fr 1fr}
+  .vac-card:nth-child(2){margin-left:0}
+  .cmp-hc{padding:14px 18px;font-size:.9rem}
+  .cmp-cell{padding:14px 18px;font-size:.82rem}
 }
+
+/* Small tablet / large phone landscape */
+@media(max-width:768px){
+  .container{padding:0 20px}
+  section{padding:52px 0}
+  nav{padding:0 20px;height:56px}
+  .hero-wrap{min-height:auto}
+  .hero-inner{padding:48px 0 40px}
+  .hero-inner h1{font-size:clamp(1.6rem,5vw,2.4rem)}
+  .hero-feats{grid-template-columns:1fr 1fr;gap:10px 16px;max-width:100%}
+  .hero-btn{padding:13px 24px;font-size:.88rem}
+  .counter-strip-inner{grid-template-columns:1fr 1fr}
+  .srv-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .srv-card{padding:20px 18px}
+  .proc-grid{gap:32px}
+  .proc-phone{width:200px}
+  .proc-phone-img img{height:400px}
+  .cmp-head{font-size:.85rem}
+  .res-img img{height:280px}
+  .plan-left{padding:28px}
+  .plan-left h3{font-size:1.3rem}
+  .plan-img img{height:300px}
+  .cta-block{border-radius:20px}
+  .cta-guarantees{grid-template-columns:1fr 1fr}
+  .cta-right{min-height:240px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .soc-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .soc-thumb{height:150px}
+  .calc-box{padding:28px;border-radius:16px}
+  .faq-item .fq{padding:16px 18px}
+  .fai{padding:0 18px 16px;padding-top:12px}
+}
+
+/* Phone */
 @media(max-width:600px){
-  .srv-grid,.calc-grid,.soc-grid,.cta-list,.cta-guarantees{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-feats{grid-template-columns:1fr 1fr}
+  .container{padding:0 16px}
+  section{padding:44px 0}
+  nav{padding:0 16px;height:52px}
+  .nav-logo{font-size:1rem}
+  .bcn{padding:7px 16px;font-size:.78rem}
+  .hero-inner{padding:36px 0 32px}
+  .hero-inner h1{font-size:clamp(1.4rem,6vw,2rem);line-height:1.2}
+  .hero-desc{font-size:.87rem;margin-bottom:20px}
+  .hero-feats{grid-template-columns:1fr 1fr;gap:8px 12px;margin-bottom:24px}
+  .hf{font-size:.8rem;gap:7px}
+  .hf-ico{width:24px;height:24px;font-size:.8rem}
+  .hero-btn{padding:12px 20px;font-size:.87rem;width:100%;justify-content:center}
+  .counter-strip-inner{grid-template-columns:1fr 1fr}
+  .counter-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:14px 16px}
+  .counter-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.2)}
+  .counter-item:nth-last-child(-n+2){border-bottom:none}
+  .counter-num{font-size:1.8rem}
+  .counter-lbl{font-size:.75rem}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-box{padding:22px 18px;border-radius:14px}
+  .calc-result-row{padding:16px 18px;flex-direction:column;text-align:center;gap:12px}
+  .calc-result-amount{padding:12px 28px;font-size:1.6rem;min-width:auto;width:100%}
+  .prob-grid{gap:28px}
+  .prob-img img{height:260px}
+  .prob-left h2{font-size:1.5rem}
+  .srv-grid{grid-template-columns:1fr;gap:12px}
+  .srv-card{padding:20px 16px}
+  .srv-ico{width:40px;height:40px;font-size:1.15rem;margin-bottom:12px}
+  .proc-phone{width:180px}
+  .proc-phone-img img{height:360px}
+  .proc-step{padding:12px 0;padding-left:6px;margin-left:-6px}
+  .proc-num{width:30px;height:30px;font-size:.82rem}
+  .cmp-table{border-radius:14px}
+  .cmp-head{font-size:.78rem}
+  .cmp-hc{padding:12px 14px}
+  .cmp-cell{padding:12px 14px;font-size:.78rem;gap:8px}
+  .cmp-footer{padding:18px 14px}
+  .cmp-footer-text{font-size:.82rem}
+  .res-grid{gap:24px}
+  .res-img img{height:240px}
+  .res-left h2{font-size:1.5rem}
+  .plan-card{border-radius:18px}
+  .plan-left{padding:24px 20px}
+  .plan-left h3{font-size:1.2rem}
+  .plan-left p{font-size:.87rem}
+  .plan-list li{font-size:.84rem}
+  .plan-img{max-height:280px}
+  .plan-img img{height:280px}
+  .cta-block{border-radius:18px;grid-template-columns:1fr}
+  .cta-left{padding:28px 22px}
+  .cta-left h2{font-size:1.4rem}
+  .cta-list{grid-template-columns:1fr 1fr}
+  .cta-guarantees{grid-template-columns:1fr}
+  .cta-g{padding:10px 8px;font-size:.76rem}
+  .cta-right{min-height:220px}
+  .cta-btn{width:100%;justify-content:center;padding:14px 24px;font-size:.9rem}
+  .soc-grid{grid-template-columns:1fr}
+  .soc-thumb{height:180px}
+  .faq-item .fq span{font-size:.87rem}
+  .ftog{width:30px;height:30px;font-size:.65rem}
+  .fai{font-size:.84rem}
+  .vac-card:nth-child(2){margin-left:0}
+  .vac-card{padding:20px}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .fcta-col{gap:10px}
+  .fbottom{font-size:.73rem}
+  .btn-blue,.btn-outline{padding:12px 24px;font-size:.85rem}
+}
+
+/* Small phone */
+@media(max-width:380px){
+  .container{padding:0 12px}
+  .hero-inner h1{font-size:1.3rem}
+  .hero-feats{grid-template-columns:1fr;gap:8px}
+  .hero-desc{font-size:.83rem}
   .counter-strip-inner{grid-template-columns:1fr}
-  .counter-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 20px}
+  .counter-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 16px}
   .counter-item:last-child{border-bottom:none}
+  .cta-list{grid-template-columns:1fr}
+  .plan-left{padding:20px 16px}
+  .cta-left{padding:24px 16px}
+  .calc-box{padding:18px 14px}
+  .nav-logo{font-size:.9rem}
+  .bcn{padding:6px 12px;font-size:.75rem}
 }
 </style>
 </head>
@@ -508,7 +659,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
       <div class="prob-img rv-r">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85&fit=crop" alt="Model with laptop" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&q=85&fit=crop" alt="Content creator challenges" loading="lazy">
       </div>
     </div>
   </div>
@@ -554,7 +705,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="proc-phone rv-r">
         <div class="proc-phone-glow"></div>
         <div class="proc-phone-img">
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=85&fit=crop" alt="Phone" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=85&fit=crop" alt="Analytics dashboard" loading="lazy">
         </div>
       </div>
     </div>
@@ -609,7 +760,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="btn-blue rv" style="text-decoration:none" data-ru="Получить гарантии письменно" data-en="Get guarantees in writing">Получить гарантии письменно</a>
       </div>
       <div class="res-img rv-r">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&q=85&fit=crop" alt="Working on laptop" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=85&fit=crop" alt="Team success results" loading="lazy">
       </div>
     </div>
   </div>
@@ -632,7 +783,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="btn-blue" style="text-decoration:none" data-ru="Начать работу" data-en="Get started">Начать работу</a>
       </div>
       <div class="plan-img">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=700&q=85&fit=crop&crop=top" alt="Model" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=700&q=85&fit=crop" alt="Partnership collaboration" loading="lazy">
       </div>
     </div>
   </div>
@@ -702,7 +853,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="cta-btn" style="text-decoration:none" data-ru="✈ Начать зарабатывать больше" data-en="✈ Start earning more">✈ Начать зарабатывать больше</a>
       </div>
       <div class="cta-right">
-        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=700&q=85&fit=crop&crop=top" alt="Business woman" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=700&q=85&fit=crop" alt="Confident woman" loading="lazy">
       </div>
     </div>
   </div>
