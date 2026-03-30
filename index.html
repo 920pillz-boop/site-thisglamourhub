@@ -2,15 +2,16 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OWN AGENCY — OnlyFans Agency</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<title>thisglamourhub — Fansly Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1a1a1a;line-height:1.6;overflow-x:hidden;max-width:100vw;-webkit-text-size-adjust:100%}
+img,video{max-width:100%;height:auto}
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:#00aaff;border-radius:2px}
 a{text-decoration:none;color:inherit}
 :root{
@@ -74,7 +75,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 
 /* -- HERO -- */
 .hero-wrap{position:relative;overflow:hidden;min-height:calc(100vh - 62px)}
-.hero-img{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1600&q=80&fit=crop') center top/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out}
+.hero-img{position:absolute;inset:-30% 0 0 0;bottom:0;background:url('img/hero.png') center/cover no-repeat;transform:scale(1.05);transition:transform 8s ease-out;will-change:transform}
 .hero-img.loaded{transform:scale(1)}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(0,0,0,.82) 0%,rgba(0,0,0,.55) 50%,rgba(0,0,0,.15) 100%)}
 .hero-inner{position:relative;z-index:1;padding:80px 0 72px}
@@ -92,7 +93,7 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 /* -- PLATFORMS -- */
 .platforms{padding:22px 0;border-bottom:1px solid var(--gray2);overflow:hidden}
 .plat-track{display:flex;gap:56px;align-items:center;width:max-content;animation:marquee 20s linear infinite;will-change:transform}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-33.333%)}}
 .plat-item{font-weight:800;font-size:1rem;white-space:nowrap;letter-spacing:-.01em;opacity:.55;transition:opacity .3s;cursor:default;flex-shrink:0}
 .plat-item:hover{opacity:.9}
 .plat-item.of{color:#00ADE8}.plat-item.rd{color:#FF4500}.plat-item.ph{color:#FF9000}.plat-item.yt{color:#FF0000}.plat-item.tt{color:#000}
@@ -225,15 +226,15 @@ nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,.08)}
 .plan-section h2 .blue{color:var(--blue)}
 .plan-card{border-radius:24px;overflow:hidden;background:var(--gray);display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--sh);transition:box-shadow .3s}
 .plan-card:hover{box-shadow:var(--shl)}
-.plan-left{padding:44px}
+.plan-left{padding:44px;display:flex;flex-direction:column;justify-content:center}
 .plan-left h3{font-size:1.55rem;font-weight:800;margin-bottom:16px;line-height:1.3;letter-spacing:-.03em}
 .plan-left h3 .blue{color:var(--blue)}
 .plan-left p{color:var(--text2);line-height:1.75;margin-bottom:16px;font-size:.93rem}
 .plan-list{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:32px}
 .plan-list li{display:flex;align-items:center;gap:9px;font-size:.88rem;color:var(--text2)}
 .plan-dot{color:var(--blue);font-size:1.3rem;flex-shrink:0;margin-top:-2px}
-.plan-img{position:relative;overflow:hidden}
-.plan-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease}
+.plan-img{position:relative;overflow:hidden;background:#fff;display:flex;align-items:center;justify-content:center}
+.plan-img img{width:100%;height:100%;object-fit:contain;padding:28px;display:block;transition:transform .7s ease}
 .plan-card:hover .plan-img img{transform:scale(1.06)}
 
 /* -- FAQ -- */
@@ -327,23 +328,204 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 .btn-outline:hover{background:var(--blue);color:#fff;box-shadow:var(--shb)}
 
 /* -- RESPONSIVE -- */
+
+/* Large desktop */
+@media(min-width:1400px){
+  .container{max-width:1200px}
+  .hero-inner h1{font-size:4.2rem}
+  .srv-grid{gap:22px}
+}
+@media(min-width:1600px){
+  .container{max-width:1320px}
+  .hero-inner{padding:100px 0 90px}
+  .counter-strip-inner{grid-template-columns:repeat(2,1fr)}
+}
+
+/* Tablet landscape */
+@media(max-width:1080px){
+  .container{padding:0 24px}
+  section{padding:64px 0}
+  .prob-grid,.proc-grid,.res-grid{gap:40px}
+  .footer-grid{grid-template-columns:1fr 1fr 1fr}
+  .cta-block{grid-template-columns:1fr 1fr}
+  .cta-left{padding:40px 36px}
+  .plan-left{padding:36px}
+}
+
+/* Tablet portrait */
 @media(max-width:960px){
   .nav-links,.lang-btn{display:none}
   .hamburger{display:flex}
-  .hero-feats,.prob-grid,.srv-intro,.proc-grid,.cmp-section .tw,.res-grid,.plan-card,.cta-block,.footer-grid{grid-template-columns:1fr}
+  .nav-soc{display:none}
+  .prob-grid,.srv-intro,.proc-grid,.res-grid,.plan-card,.cta-block{grid-template-columns:1fr}
   .srv-grid{grid-template-columns:1fr 1fr}
   .calc-grid{grid-template-columns:1fr 1fr}
   .soc-grid{grid-template-columns:1fr 1fr}
   .cta-right{min-height:280px}
   .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-inner h1{font-size:clamp(1.8rem,5vw,3rem)}
+  .hero-desc{font-size:.93rem;max-width:100%}
+  .hero-inner{padding:56px 0 48px}
+  .prob-img img{height:320px}
+  .res-img img{height:320px}
+  .proc-phone{width:220px}
+  .proc-phone-img video,.proc-phone-img img{height:440px}
+  .plan-img{overflow:hidden}
+  .plan-img img{height:100%}
+  .cta-left{padding:36px 28px}
+  .cta-guarantees{grid-template-columns:1fr 1fr 1fr}
+  .vac-card:nth-child(2){margin-left:0}
+  .cmp-hc{padding:14px 18px;font-size:.9rem}
+  .cmp-cell{padding:14px 18px;font-size:.82rem}
 }
+
+/* Small tablet / large phone landscape */
+@media(max-width:768px){
+  .container{padding:0 20px;max-width:100%}
+  section{padding:52px 0}
+  nav{padding:0 16px;height:56px}
+  .nav-logo{font-size:.95rem}
+  .hero-wrap{min-height:auto}
+  .hero-inner{padding:48px 0 40px}
+  .hero-inner h1{font-size:clamp(1.6rem,5vw,2.4rem)}
+  .hero-desc{max-width:100%}
+  .hero-btn{padding:13px 24px;font-size:.88rem}
+  .counter-strip-inner{grid-template-columns:1fr 1fr}
+  .srv-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .srv-card{padding:20px 18px}
+  .proc-grid{gap:32px}
+  .proc-phone{width:200px}
+  .proc-phone-img video,.proc-phone-img img{height:400px}
+  .cmp-head{font-size:.85rem}
+  .res-img img{height:280px}
+  .plan-left{padding:28px}
+  .plan-left h3{font-size:1.3rem}
+  .plan-card{grid-template-columns:1fr}
+  .plan-img{max-height:320px}
+  .plan-img img{height:320px;object-fit:contain;padding:20px}
+  .cta-block{border-radius:20px}
+  .cta-guarantees{grid-template-columns:1fr 1fr}
+  .cta-right{min-height:240px}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:28px}
+  .soc-grid{grid-template-columns:1fr 1fr;gap:14px}
+  .soc-thumb{height:150px}
+  .calc-box{padding:28px;border-radius:16px}
+  .faq-item .fq{padding:16px 18px}
+  .fai{padding:0 18px 16px;padding-top:12px}
+}
+
+/* Phone */
 @media(max-width:600px){
-  .srv-grid,.calc-grid,.soc-grid,.cta-list,.cta-guarantees{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr}
-  .hero-feats{grid-template-columns:1fr 1fr}
+  *{box-sizing:border-box}
+  .container{padding:0 16px;max-width:100%;overflow-x:hidden}
+  section{padding:44px 0}
+  nav{padding:0 12px;height:52px;gap:8px}
+  .nav-logo{font-size:.85rem;gap:6px;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:120px}
+  .nav-dot{width:10px;height:10px;flex-shrink:0}
+  .nav-soc{display:none}
+  .bcn{padding:7px 14px;font-size:.75rem}
+  .nav-right{gap:8px}
+  .hero-wrap{min-height:auto}
+  .hero-inner{padding:32px 0 28px}
+  .hero-inner h1{font-size:1.5rem;line-height:1.25;word-wrap:break-word;overflow-wrap:break-word}
+  .highlight{padding:3px 12px;font-size:1.3rem;border-radius:10px}
+  .hero-desc{font-size:.84rem;margin-bottom:20px;max-width:100%;line-height:1.65}
+  .hero-btn{padding:12px 20px;font-size:.85rem;width:100%;justify-content:center}
+  .counter-strip{padding:24px 0}
+  .counter-strip-inner{grid-template-columns:1fr 1fr;gap:0}
+  .counter-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:14px 16px}
+  .counter-item:nth-child(odd){border-right:1px solid rgba(255,255,255,.2)}
+  .counter-item:nth-last-child(-n+2){border-bottom:none}
+  .counter-num{font-size:1.6rem}
+  .counter-lbl{font-size:.72rem}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-box{padding:20px 16px;border-radius:14px}
+  .calc-result-row{padding:16px;flex-direction:column;text-align:center;gap:12px}
+  .calc-result-amount{padding:10px 20px;font-size:1.5rem;min-width:auto;width:100%}
+  .calc-result-label{font-size:.85rem}
+  .prob-grid{gap:24px}
+  .prob-img img{height:240px}
+  .prob-left h2{font-size:1.4rem}
+  .prob-left p{font-size:.87rem}
+  .srv-grid{grid-template-columns:1fr;gap:12px}
+  .srv-card{padding:18px 16px}
+  .srv-ico{width:38px;height:38px;font-size:1.1rem;margin-bottom:10px}
+  .srv-card h3{font-size:.9rem}
+  .srv-card p{font-size:.82rem}
+  .srv-intro h2{font-size:1.4rem}
+  .proc-grid{gap:28px}
+  .proc-phone{width:100%;max-width:220px}
+  .proc-phone-img video,.proc-phone-img img{height:380px}
+  .proc-step{padding:10px 0;padding-left:6px;margin-left:-6px}
+  .proc-num{width:28px;height:28px;font-size:.8rem}
+  .proc-step-text{font-size:.84rem}
+  .proc-left h2{font-size:1.4rem}
+  .proc-left>p{font-size:.87rem}
+  .cmp-table{border-radius:12px}
+  .cmp-head{font-size:.75rem}
+  .cmp-hc{padding:10px 12px}
+  .cmp-cell{padding:10px 12px;font-size:.75rem;gap:6px}
+  .cmp-footer{padding:16px 12px}
+  .cmp-footer-text{font-size:.8rem}
+  .res-grid{gap:24px}
+  .res-img img{height:220px}
+  .res-left h2{font-size:1.4rem}
+  .res-left>p{font-size:.87rem}
+  .plan-card{border-radius:16px;grid-template-columns:1fr}
+  .plan-left{padding:22px 18px}
+  .plan-left h3{font-size:1.15rem}
+  .plan-left p{font-size:.85rem}
+  .plan-list li{font-size:.82rem}
+  .plan-img{overflow:hidden;max-height:280px}
+  .plan-img img{height:280px;width:100%;object-fit:contain;padding:16px}
+  .cta-block{border-radius:16px;grid-template-columns:1fr}
+  .cta-left{padding:24px 18px}
+  .cta-left h2{font-size:1.3rem}
+  .cta-left>p{font-size:.85rem}
+  .cta-list{grid-template-columns:1fr}
+  .cta-guarantees{grid-template-columns:1fr}
+  .cta-g{padding:10px 8px;font-size:.76rem}
+  .cta-right{min-height:200px}
+  .cta-btn{width:100%;justify-content:center;padding:13px 20px;font-size:.88rem}
+  .soc-grid{grid-template-columns:1fr}
+  .soc-thumb{height:180px}
+  .soc-handle{font-size:.8rem;padding:12px 14px}
+  .faq-section h2{font-size:1.4rem}
+  .faq-sub{font-size:.85rem}
+  .faq-item .fq{padding:14px 16px}
+  .faq-item .fq span{font-size:.85rem}
+  .ftog{width:28px;height:28px;font-size:.6rem}
+  .fai{font-size:.82rem;padding:0 16px 16px;padding-top:12px}
+  .vac-section h2{font-size:1.3rem}
+  .vac-card:nth-child(2){margin-left:0}
+  .vac-card{padding:18px 16px}
+  .vac-card h3{font-size:.92rem}
+  .vac-card p{font-size:.8rem}
+  .footer-grid{grid-template-columns:1fr;gap:24px}
+  .fcta-col{gap:10px}
+  .fcta-btn2{font-size:.8rem;padding:10px 16px}
+  .fbottom{font-size:.72rem}
+  .btn-blue,.btn-outline{padding:11px 22px;font-size:.84rem}
+}
+
+/* Small phone */
+@media(max-width:380px){
+  .container{padding:0 12px}
+  nav{padding:0 10px}
+  .nav-logo{font-size:.8rem;max-width:100px}
+  .bcn{padding:6px 10px;font-size:.72rem}
+  .hero-inner h1{font-size:1.3rem}
+  .highlight{font-size:1.15rem;padding:2px 10px}
+  .hero-desc{font-size:.8rem}
   .counter-strip-inner{grid-template-columns:1fr}
-  .counter-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 20px}
+  .counter-item{border-right:none!important;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 16px}
   .counter-item:last-child{border-bottom:none}
+  .cta-list{grid-template-columns:1fr}
+  .plan-left{padding:18px 14px}
+  .cta-left{padding:20px 14px}
+  .calc-box{padding:16px 12px}
+  .cmp-cell{padding:8px 10px;font-size:.72rem}
+  .cmp-hc{padding:8px 10px;font-size:.7rem}
 }
 </style>
 </head>
@@ -353,10 +535,9 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <nav id="nav">
   <a href="#" class="nav-logo">
     <div class="nav-dot"></div>
-    OWN AGENCY
+    thisglamourhub
   </a>
   <ul class="nav-links">
-    <li><a href="#services">OnlyFans</a></li>
     <li><a href="#services">Fansly</a></li>
     <li><a href="#vacancies" data-ru="Вакансии" data-en="Vacancies">Вакансии</a></li>
     <li><a href="#faq" data-ru="Блог" data-en="Blog">Блог</a></li>
@@ -379,17 +560,12 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
   <div class="hero-overlay"></div>
   <div class="container">
     <div class="hero-inner">
-      <h1 style="animation:fadeUp .9s ease both" data-ru="Превратите свою популярность<br>в стабильный доход с ведущим<br><span class='highlight'>OnlyFans-агентством</span>" data-en="Turn your popularity into<br>stable income with the leading<br><span class='highlight'>OnlyFans Agency</span>">
+      <h1 style="animation:fadeUp .9s ease both" data-ru="Превратите свою популярность<br>в стабильный доход с ведущим<br><span class='highlight'>Fansly-агентством</span>" data-en="Turn your popularity into<br>stable income with the leading<br><span class='highlight'>Fansly Agency</span>">
         Превратите свою популярность<br>в стабильный доход с ведущим<br>
-        <span class="highlight">OnlyFans-агентством</span>
+        <span class="highlight">Fansly-агентством</span>
       </h1>
-      <p class="hero-desc" style="animation:fadeUp .9s .12s ease both" data-ru="OWN AGENCY — профессиональное агентство полного цикла для контент-креаторов OnlyFans. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:" data-en="OWN AGENCY — a full-cycle professional agency for OnlyFans content creators. We handle all aspects of managing and promoting your account: from content strategy to 24/7 chatting with subscribers. Focus on creativity — we'll ensure your success:">OWN AGENCY — профессиональное агентство полного цикла для контент-креаторов OnlyFans. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:</p>
-      <div class="hero-feats" style="animation:fadeUp .9s .22s ease both">
-        <div class="hf"><div class="hf-ico">🏆</div><span data-ru="Вхождение в топ" data-en="Top ranking">Вхождение в топ</span></div>
-        <div class="hf"><div class="hf-ico">⟳</div><span data-ru="Поддержка 24/7" data-en="24/7 Support">Поддержка 24/7</span></div>
-        <div class="hf"><div class="hf-ico">$</div><span data-ru="Без предоплат" data-en="No prepayments">Без предоплат</span></div>
-      </div>
-      <div style="animation:fadeUp .9s .32s ease both">
+      <p class="hero-desc" style="animation:fadeUp .9s .12s ease both" data-ru="thisglamourhub — профессиональное агентство полного цикла для контент-креаторов Fansly. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:" data-en="thisglamourhub — a full-cycle professional agency for Fansly content creators. We handle all aspects of managing and promoting your account: from content strategy to 24/7 chatting with subscribers. Focus on creativity — we'll ensure your success:">thisglamourhub — профессиональное агентство полного цикла для контент-креаторов Fansly. Мы берём на себя все аспекты управления и продвижения твоего аккаунта: от создания контент-стратегии до круглосуточного чаттинга с подписчиками. Сосредоточься на творчестве — а мы обеспечим успех:</p>
+      <div style="animation:fadeUp .9s .22s ease both">
         <a href="https://t.me/ownagency_bot" target="_blank" class="hero-btn">
           <div class="tg-ico"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>
           <span data-ru="Начать зарабатывать больше" data-en="Start earning more">Начать зарабатывать больше</span>
@@ -403,14 +579,21 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <div class="platforms">
   <div style="overflow:hidden">
     <div class="plat-track" id="platTrack">
-      <span class="plat-item of">OnlyFans</span>
+      <span class="plat-item of">Fansly</span>
       <span class="plat-item rd">Reddit</span>
       <span class="plat-item ph">PornHub</span>
       <span class="plat-item yt">YouTube</span>
       <span class="plat-item tt">TikTok</span>
       <span class="plat-item of">Instagram</span>
       <span class="plat-item rd">Telegram</span>
-      <span class="plat-item of">OnlyFans</span>
+      <span class="plat-item of">Fansly</span>
+      <span class="plat-item rd">Reddit</span>
+      <span class="plat-item ph">PornHub</span>
+      <span class="plat-item yt">YouTube</span>
+      <span class="plat-item tt">TikTok</span>
+      <span class="plat-item of">Instagram</span>
+      <span class="plat-item rd">Telegram</span>
+      <span class="plat-item of">Fansly</span>
       <span class="plat-item rd">Reddit</span>
       <span class="plat-item ph">PornHub</span>
       <span class="plat-item yt">YouTube</span>
@@ -444,7 +627,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
           <input type="number" class="cinput" id="c-income" value="500" min="0">
         </div>
         <div class="calc-field">
-          <label data-ru="Сколько планируешь сотрудничать с OWN AGENCY?" data-en="How long do you plan to work with OWN AGENCY?">Сколько планируешь сотрудничать с OWN AGENCY?</label>
+          <label data-ru="Сколько планируешь сотрудничать с thisglamourhub?" data-en="How long do you plan to work with thisglamourhub?">Сколько планируешь сотрудничать с thisglamourhub?</label>
           <div class="slider-row"><span data-ru="2 Мес." data-en="2 Mo.">2 Мес.</span><span data-ru="24 Мес." data-en="24 Mo.">24 Мес.</span></div>
           <input type="range" class="cslider" id="c-months" min="2" max="24" value="10">
           <div class="slval" id="c-months-val">10 мес.</div>
@@ -466,7 +649,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
           <div class="slval" id="c-content-val">80 фото/нед</div>
         </div>
         <div class="calc-field">
-          <label data-ru="Есть ли опыт в Fansly/Onlyfans и других?" data-en="Do you have Fansly/OnlyFans experience?">Есть ли опыт в Fansly/Onlyfans и других?</label>
+          <label data-ru="Есть ли опыт в Fansly и других?" data-en="Do you have Fansly experience?">Есть ли опыт в Fansly и других?</label>
           <div class="slider-row"><span data-ru="0 Мес." data-en="0 Mo.">0 Мес.</span><span data-ru="24 Мес." data-en="24 Mo.">24 Мес.</span></div>
           <input type="range" class="cslider" id="c-exp" min="0" max="24" value="4">
           <div class="slval" id="c-exp-val">4 мес. опыта</div>
@@ -484,7 +667,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
       <div class="calc-result-row">
-        <div class="calc-result-label" data-ru="Сколько будешь зарабатывать через 6 месяцев с OWN AGENCY" data-en="How much you'll earn in 6 months with OWN AGENCY">Сколько будешь зарабатывать через 6 месяцев с OWN AGENCY</div>
+        <div class="calc-result-label" data-ru="Сколько будешь зарабатывать через 6 месяцев с thisglamourhub" data-en="How much you'll earn in 6 months with thisglamourhub">Сколько будешь зарабатывать через 6 месяцев с thisglamourhub</div>
         <div class="calc-result-amount" id="c-result">3 925 $</div>
       </div>
       <p class="calc-note" data-ru="* Расчёт является ориентировочным и зависит от ниши, активности и платформы" data-en="* The calculation is approximate and depends on niche, activity and platform">* Расчёт является ориентировочным и зависит от ниши, активности и платформы</p>
@@ -498,7 +681,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
     <div class="prob-grid">
       <div class="prob-left">
         <h2 class="rv" data-ru="Типичные проблемы моделей<br><span>и контент-креаторов</span>" data-en="Typical problems of models<br><span>and content creators</span>">Типичные проблемы моделей<br><span>и контент-креаторов</span></h2>
-        <p class="rv" data-ru="Большинство авторов контента Fansly/OnlyFans сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка." data-en="Most Fansly/OnlyFans content creators face the same challenges: low reach, difficulty attracting generous subscribers, lack of time for chatting and social media promotion. Without a professional team, it's hard to compete with top models and unlock your full earning potential.">Большинство авторов контента Fansly/OnlyFans сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка.</p>
+        <p class="rv" data-ru="Большинство авторов контента Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка." data-en="Most Fansly content creators face the same challenges: low reach, difficulty attracting generous subscribers, lack of time for chatting and social media promotion. Without a professional team, it's hard to compete with top models and unlock your full earning potential.">Большинство авторов контента Fansly сталкиваются с одними и теми же трудностями: низкий охват, сложности с привлечением щедрых подписчиков, нехватка времени на чаттинг и продвижение в социальных сетях. Без профессиональной команды сложно конкурировать с топ-моделями и раскрыть полный потенциал заработка.</p>
         <div class="prob-list">
           <div class="prob-item rv"><div class="prob-ico">✕</div><div class="prob-text" data-ru="Непонятно, с чего начать" data-en="Don't know where to start">Непонятно, с чего начать</div></div>
           <div class="prob-item rv"><div class="prob-ico">✕</div><div class="prob-text" data-ru="Нет стабильного потока подписчиков" data-en="No steady subscriber flow">Нет стабильного потока подписчиков</div></div>
@@ -508,7 +691,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
       <div class="prob-img rv-r">
-        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=700&q=85&fit=crop" alt="Model with laptop" loading="lazy">
+        <img src="img/problems.png" alt="Content creator challenges" loading="lazy">
       </div>
     </div>
   </div>
@@ -522,7 +705,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <h2 data-ru="Что мы <span>предлагаем?</span>" data-en="What we <span>offer?</span>">Что мы <span>предлагаем?</span></h2>
       </div>
       <div class="rv-r">
-        <p data-ru="OWN AGENCY Agency предоставляет полный спектр услуг профессионального управления Fansly/OnlyFans-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:" data-en="OWN AGENCY Agency provides a full range of professional Fansly/OnlyFans account management services. Our team of specialists works across different time zones, ensuring 24/7 support and promotion. We create personalized strategies for each creator, considering goals and audience:">OWN AGENCY Agency предоставляет полный спектр услуг профессионального управления Fansly/OnlyFans-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:</p>
+        <p data-ru="thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:" data-en="thisglamourhub provides a full range of professional Fansly account management services. Our team of specialists works across different time zones, ensuring 24/7 support and promotion. We create personalized strategies for each creator, considering goals and audience:">thisglamourhub предоставляет полный спектр услуг профессионального управления Fansly-аккаунтом. Команда специалистов работает в разных часовых поясах, обеспечивая круглосуточную поддержку и продвижение. Мы создаём персонализированные стратегии для каждого креатора, учитывая цели и аудиторию:</p>
       </div>
     </div>
     <div class="srv-grid">
@@ -554,7 +737,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="proc-phone rv-r">
         <div class="proc-phone-glow"></div>
         <div class="proc-phone-img">
-          <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=85&fit=crop" alt="Phone" loading="lazy">
+          <video src="img/process.mp4" autoplay loop muted playsinline style="width:100%;height:520px;object-fit:cover;display:block"></video>
         </div>
       </div>
     </div>
@@ -564,11 +747,11 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <!-- -- COMPARISON -- -->
 <section id="comparison" class="cmp-section">
   <div class="container">
-    <h2 class="rv" data-ru="Почему топ-модели выбирают именно<br><span class='blue'>OWN AGENCY Agency?</span>" data-en="Why do top models choose<br><span class='blue'>OWN AGENCY Agency?</span>">Почему топ-модели выбирают именно<br><span class="blue">OWN AGENCY Agency?</span></h2>
+    <h2 class="rv" data-ru="Почему топ-модели выбирают именно<br><span class='blue'>thisglamourhub?</span>" data-en="Why do top models choose<br><span class='blue'>thisglamourhub?</span>">Почему топ-модели выбирают именно<br><span class="blue">thisglamourhub?</span></h2>
     <p class="cmp-sub rv" data-ru="Мы фокусируемся на долгосрочном сотрудничестве и сделаем всё, чтобы ты получала стабильно высокий доход." data-en="We focus on long-term partnerships and will do everything to ensure you receive consistently high income.">Мы фокусируемся на долгосрочном сотрудничестве и сделаем всё, чтобы ты получала стабильно высокий доход.</p>
     <div class="cmp-table rv">
       <div class="cmp-head">
-        <div class="cmp-hc">Own Agency</div>
+        <div class="cmp-hc">thisglamourhub</div>
         <div class="cmp-hc" data-ru="Другие агентства" data-en="Other agencies">Другие агентства</div>
       </div>
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Помогаем найти свою нишу и раскрыть индивидуальность. Успешные кейсы в категориях «милф», «доминация», скромных моделей и моделей, скрывающих своё лицо." data-en="We help you find your niche and reveal your individuality. Successful cases in categories like MILF, domination, modest models, and faceless models.">Помогаем найти свою нишу и раскрыть индивидуальность. Успешные кейсы в категориях «милф», «доминация», скромных моделей и моделей, скрывающих своё лицо.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="Работают только с самыми востребованными типажами (в основном baby face)." data-en="Only work with the most popular types (mainly baby face).">Работают только с самыми востребованными типажами (в основном baby face).</span></div></div>
@@ -577,7 +760,6 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Полностью прозрачные условия — никаких стартовых взносов и скрытых платежей." data-en="Fully transparent terms — no upfront fees or hidden payments.">Полностью прозрачные условия — никаких стартовых взносов и скрытых платежей.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="В дополнение к комиссии могут запрашивать отдельную оплату различных услуг." data-en="In addition to commission, they may charge separately for various services.">В дополнение к комиссии могут запрашивать отдельную оплату различных услуг.</span></div></div>
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Персональный подход и индивидуальные стратегии роста." data-en="Personal approach and individual growth strategies.">Персональный подход и индивидуальные стратегии роста.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="Шаблонные решения." data-en="Template solutions.">Шаблонные решения.</span></div></div>
       <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Комплексные услуги: от персонального брендинга до эксклюзивных воронок продаж. Работа с личным менеджером." data-en="Comprehensive services: from personal branding to exclusive sales funnels. Working with a personal manager.">Комплексные услуги: от персонального брендинга до эксклюзивных воронок продаж. Работа с личным менеджером.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="Точечные услуги без закрепления постоянной команды." data-en="Selective services without a dedicated team.">Точечные услуги без закрепления постоянной команды.</span></div></div>
-      <div class="cmp-row"><div class="cmp-cell"><span class="ok">✓</span><span data-ru="Есть реальный офис в Санкт-Петербурге, где можно встретиться и пообщаться с командой." data-en="We have a real office in Saint Petersburg where you can meet and talk with the team.">Есть реальный офис в Санкт-Петербурге, где можно встретиться и пообщаться с командой.</span></div><div class="cmp-cell"><span class="nx">✕</span><span data-ru="В большинстве случаев виртуальные и не имеют офиса." data-en="In most cases virtual and have no office.">В большинстве случаев виртуальные и не имеют офиса.</span></div></div>
       <div class="cmp-footer">
         <div class="cmp-footer-text">
           <p data-ru="Мы проанализировали множество агентств и предлагаем наиболее интересные условия на рынке. Всё предельно прозрачно, работаем на результат и ориентируемся на долгосрочное сотрудничество." data-en="We've analyzed many agencies and offer the most attractive terms on the market. Everything is fully transparent, we work for results and focus on long-term partnerships.">Мы проанализировали множество агентств и предлагаем наиболее интересные условия на рынке. Всё предельно прозрачно, работаем на результат и ориентируемся на долгосрочное сотрудничество.</p>
@@ -609,7 +791,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="btn-blue rv" style="text-decoration:none" data-ru="Получить гарантии письменно" data-en="Get guarantees in writing">Получить гарантии письменно</a>
       </div>
       <div class="res-img rv-r">
-        <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=700&q=85&fit=crop" alt="Working on laptop" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=700&q=85&fit=crop" alt="Team success results" loading="lazy">
       </div>
     </div>
   </div>
@@ -623,7 +805,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       <div class="plan-left">
         <h3 data-ru="«Полное продвижение» (аутсорсинг аккаунта) — <span class='blue'>для максимального роста доходов.</span>" data-en="«Full promotion» (account outsourcing) — <span class='blue'>for maximum income growth.</span>">«Полное продвижение» (аутсорсинг аккаунта) — <span class="blue">для максимального роста доходов.</span></h3>
         <p data-ru="Полное ведение аккаунта и максимальная монетизация. Берём на себя чаттинг, маркетинг и аналитику. Через два месяца сотрудничества за свой счёт подключаем ведение социальных сетей и организовываем фотосъёмки." data-en="Full account management and maximum monetization. We handle chatting, marketing, and analytics. After two months of collaboration, we cover social media management and organize photoshoots at our expense.">Полное ведение аккаунта и максимальная монетизация. Берём на себя чаттинг, маркетинг и аналитику. Через два месяца сотрудничества за свой счёт подключаем ведение социальных сетей и организовываем фотосъёмки.</p>
-        <p data-ru="Все услуги, оказываемые по продвижению и ведению аккаунта Fansly/OnlyFans, осуществляются без доплат и скрытых комиссий, в том числе:" data-en="All services for promoting and managing a Fansly/OnlyFans account are provided without additional charges or hidden fees, including:">Все услуги, оказываемые по продвижению и ведению аккаунта Fansly/OnlyFans, осуществляются без доплат и скрытых комиссий, в том числе:</p>
+        <p data-ru="Все услуги, оказываемые по продвижению и ведению аккаунта Fansly, осуществляются без доплат и скрытых комиссий, в том числе:" data-en="All services for promoting and managing a Fansly account are provided without additional charges or hidden fees, including:">Все услуги, оказываемые по продвижению и ведению аккаунта Fansly, осуществляются без доплат и скрытых комиссий, в том числе:</p>
         <ul class="plan-list">
           <li><span class="plan-dot">●</span><span data-ru="Ведение Instagram/TikTok" data-en="Instagram/TikTok management">Ведение Instagram/TikTok</span></li>
           <li><span class="plan-dot">●</span><span data-ru="Личный ассистент" data-en="Personal assistant">Личный ассистент</span></li>
@@ -632,7 +814,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="btn-blue" style="text-decoration:none" data-ru="Начать работу" data-en="Get started">Начать работу</a>
       </div>
       <div class="plan-img">
-        <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=700&q=85&fit=crop&crop=top" alt="Model" loading="lazy">
+        <img src="img/plan.png" alt="Partnership plan" loading="lazy">
       </div>
     </div>
   </div>
@@ -642,18 +824,18 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <section id="faq" class="faq-section">
   <div class="container">
     <h2 class="rv" data-ru="Ответы на главные вопросы <span class='blue'>о сотрудничестве</span>" data-en="Answers to key questions <span class='blue'>about partnership</span>">Ответы на главные вопросы <span class="blue">о сотрудничестве</span></h2>
-    <p class="faq-sub rv" data-ru="Собрали наиболее частые вопросы от моделей о работе с OWN AGENCY Agency. Если твоего вопроса нет в списке — напиши нашему HR-менеджеру в Telegram, и получи персональную консультацию в течение 12 часов." data-en="We've collected the most common questions from models about working with OWN AGENCY Agency. If your question isn't listed — message our HR manager on Telegram and get a personal consultation within 12 hours.">Собрали наиболее частые вопросы от моделей о работе с OWN AGENCY Agency. Если твоего вопроса нет в списке — напиши нашему HR-менеджеру в Telegram, и получи персональную консультацию в течение 12 часов.</p>
+    <p class="faq-sub rv" data-ru="Собрали наиболее частые вопросы от моделей о работе с thisglamourhub. Если твоего вопроса нет в списке — напиши нашему HR-менеджеру в Telegram, и получи персональную консультацию в течение 12 часов." data-en="We've collected the most common questions from models about working with thisglamourhub. If your question isn't listed — message our HR manager on Telegram and get a personal consultation within 12 hours.">Собрали наиболее частые вопросы от моделей о работе с thisglamourhub. Если твоего вопроса нет в списке — напиши нашему HR-менеджеру в Telegram, и получи персональную консультацию в течение 12 часов.</p>
     <div class="faq-list">
       <div class="faq-item rv open"><div class="fq"><span data-ru="Какие требования к оборудованию?" data-en="What are the equipment requirements?">Какие требования к оборудованию?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Для старта тебе потребуется всего лишь телефон. Желательно, чтобы это был iPhone с хорошим качеством съёмки. Дополнительно рекомендуем приобрести кольцевую лампу — стоит она недорого, так что серьёзных вложений на начальном этапе не потребуется." data-en="To get started, all you need is a phone. Ideally, an iPhone with good camera quality. We also recommend getting a ring light — it's inexpensive, so no serious investment is needed at the initial stage.">Для старта тебе потребуется всего лишь телефон. Желательно, чтобы это был iPhone с хорошим качеством съёмки. Дополнительно рекомендуем приобрести кольцевую лампу — стоит она недорого, так что серьёзных вложений на начальном этапе не потребуется.</div></div></div>
-      <div class="faq-item rv open"><div class="fq"><span data-ru="Помогаете ли новичкам?" data-en="Do you help beginners?">Помогаете ли новичкам?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Да, мы помогаем начинающим моделям, в том числе тем, у кого нет опыта на платформе Онли Фанс. Полностью запускаем аккаунт с нуля: проводим регистрацию, обучаем, как снимать контент, даём задания, сопровождаем на всех этапах. В твоём распоряжении будет целый креативный отдел.<br><br>Для каждой модели разрабатываем персональный бренд и стиль, который позволяет выразить индивидуальность и выделяться среди конкуренток. Регулярно проводим анализ и аудит активностей." data-en="Yes, we help beginner models, including those with no OnlyFans platform experience. We fully launch an account from scratch: handle registration, teach content creation, give assignments, and support you at every stage. You'll have an entire creative department at your disposal.<br><br>For each model, we develop a personal brand and style that allows you to express individuality and stand out from competitors. We regularly analyze and audit activities.">Да, мы помогаем начинающим моделям, в том числе тем, у кого нет опыта на платформе Онли Фанс. Полностью запускаем аккаунт с нуля: проводим регистрацию, обучаем, как снимать контент, даём задания, сопровождаем на всех этапах. В твоём распоряжении будет целый креативный отдел.<br><br>Для каждой модели разрабатываем персональный бренд и стиль, который позволяет выразить индивидуальность и выделяться среди конкуренток. Регулярно проводим анализ и аудит активностей.</div></div></div>
+      <div class="faq-item rv open"><div class="fq"><span data-ru="Помогаете ли новичкам?" data-en="Do you help beginners?">Помогаете ли новичкам?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Да, мы помогаем начинающим моделям, в том числе тем, у кого нет опыта на платформе Fansly. Полностью запускаем аккаунт с нуля: проводим регистрацию, обучаем, как снимать контент, даём задания, сопровождаем на всех этапах. В твоём распоряжении будет целый креативный отдел.<br><br>Для каждой модели разрабатываем персональный бренд и стиль, который позволяет выразить индивидуальность и выделяться среди конкуренток. Регулярно проводим анализ и аудит активностей." data-en="Yes, we help beginner models, including those with no Fansly platform experience. We fully launch an account from scratch: handle registration, teach content creation, give assignments, and support you at every stage. You'll have an entire creative department at your disposal.<br><br>For each model, we develop a personal brand and style that allows you to express individuality and stand out from competitors. We regularly analyze and audit activities.">Да, мы помогаем начинающим моделям, в том числе тем, у кого нет опыта на платформе Fansly. Полностью запускаем аккаунт с нуля: проводим регистрацию, обучаем, как снимать контент, даём задания, сопровождаем на всех этапах. В твоём распоряжении будет целый креативный отдел.<br><br>Для каждой модели разрабатываем персональный бренд и стиль, который позволяет выразить индивидуальность и выделяться среди конкуренток. Регулярно проводим анализ и аудит активностей.</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="С какими типами моделей вы работаете?" data-en="What types of models do you work with?">С какими типами моделей вы работаете?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Нам важнее не конкретный типаж, а харизма, умение держаться в кадре, ответственность. Рассматриваем все типажи индивидуально — каждый человек уникален, ставить строгие рамки нет смысла. Мы ищем индивидуальность и «изюминку»." data-en="What matters to us is not a specific type, but charisma, ability to be on camera, and responsibility. We consider all types individually — every person is unique, setting strict limits makes no sense. We look for individuality and a unique spark.">Нам важнее не конкретный типаж, а харизма, умение держаться в кадре, ответственность. Рассматриваем все типажи индивидуально — каждый человек уникален, ставить строгие рамки нет смысла. Мы ищем индивидуальность и «изюминку».</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="Как защищается приватность и анонимность?" data-en="How is privacy and anonymity protected?">Как защищается приватность и анонимность?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Мы ставим геоблоки, страницы на Fansly доступны только подписчикам с привязанной картой. Русскоязычные пользователи не смогут получить доступ и увидеть твой контент. Однако стоит понимать: в интернете 100% гарантий нет." data-en="We set geo-blocks, Fansly pages are only accessible to subscribers with a linked card. Russian-speaking users won't be able to access and see your content. However, it's important to understand: there are no 100% guarantees on the internet.">Мы ставим геоблоки, страницы на Fansly доступны только подписчикам с привязанной картой. Русскоязычные пользователи не смогут получить доступ и увидеть твой контент. Однако стоит понимать: в интернете 100% гарантий нет.</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="Какой доход реально получить?" data-en="What income can you realistically earn?">Какой доход реально получить?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="В первый месяц модели в среднем зарабатывают от $1000 до $7000. Топ-модели могут зарабатывать значительно больше. Многое зависит от активности, качества контента и следования нашим рекомендациям." data-en="In the first month, models earn on average from $1,000 to $7,000. Top models can earn significantly more. Much depends on activity, content quality, and following our recommendations.">В первый месяц модели в среднем зарабатывают от $1000 до $7000. Топ-модели могут зарабатывать значительно больше. Многое зависит от активности, качества контента и следования нашим рекомендациям.</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="Нужно ли разбираться в маркетинге?" data-en="Do I need to understand marketing?">Нужно ли разбираться в маркетинге?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Разбираться в продвижении не нужно — мы берём эти вопросы на себя. Твоя задача — только снимать контент. Это уникальная возможность полностью сосредоточиться на творчестве, не отвлекаясь на рекламные и административные проблемы." data-en="You don't need to understand promotion — we handle those matters. Your only task is creating content. This is a unique opportunity to fully focus on creativity without being distracted by advertising and administrative issues.">Разбираться в продвижении не нужно — мы берём эти вопросы на себя. Твоя задача — только снимать контент. Это уникальная возможность полностью сосредоточиться на творчестве, не отвлекаясь на рекламные и административные проблемы.</div></div></div>
-      <div class="faq-item rv open"><div class="fq"><span data-ru="Сколько времени нужно уделять контенту?" data-en="How much time do I need to dedicate to content?">Сколько времени нужно уделять контенту?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="В среднем — 15-30 часов в неделю. Топ-модели снимают больше, включая индивидуальные заказы и контент для соцсетей." data-en="On average — 15-30 hours per week. Top models shoot more, including individual orders and social media content.">В среднем — 15-30 часов в неделю. Топ-модели снимают больше, включая индивидуальные заказы и контент для соцсетей.</div></div></div>
+      <div class="faq-item rv open"><div class="fq"><span data-ru="Сколько времени нужно уделять контенту?" data-en="How much time do I need to dedicate to content?">Сколько времени нужно уделять контенту?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="В среднем — 20-30 часов в неделю. Топ-модели снимают больше, включая индивидуальные заказы и контент для соцсетей." data-en="On average — 15-30 hours per week. Top models shoot more, including individual orders and social media content.">В среднем — 20-30 часов в неделю. Топ-модели снимают больше, включая индивидуальные заказы и контент для соцсетей.</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="Как быстро я увижу первые результаты?" data-en="How quickly will I see first results?">Как быстро я увижу первые результаты?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Первые результаты видны уже в первый месяц. Первую выплату можно получить через 2 недели после поступления первых средств на аккаунт." data-en="First results are visible within the first month. The first payment can be received within 2 weeks after the first funds arrive to the account.">Первые результаты видны уже в первый месяц. Первую выплату можно получить через 2 недели после поступления первых средств на аккаунт.</div></div></div>
       <div class="faq-item rv open"><div class="fq"><span data-ru="Какой возраст моделей?" data-en="What age range for models?">Какой возраст моделей?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="В основном работаем с девушками от 18 до 35 лет, но готовы рассмотреть и старше, если модель ухоженная, ответственная и делает качественный контент. Младше 18 лет — категорически нет." data-en="We mainly work with women aged 18 to 35, but we're open to considering older applicants if the model is well-groomed, responsible, and produces quality content. Under 18 — absolutely not.">В основном работаем с девушками от 18 до 35 лет, но готовы рассмотреть и старше, если модель ухоженная, ответственная и делает качественный контент. Младше 18 лет — категорически нет.</div></div></div>
-      <div class="faq-item rv open"><div class="fq"><span data-ru="Требуется ли знание английского?" data-en="Is English proficiency required?">Требуется ли знание английского?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Если ты не знаешь иностранных языков, ничего страшного. В команде OWN AGENCY Agency есть профессионалы-секстеры, которые ведут переписку. Ты, как создатель контента, можешь заниматься исключительно съёмками новых материалов." data-en="If you don't speak foreign languages, that's perfectly fine. The OWN AGENCY Agency team has professional sexters who handle correspondence. As a content creator, you can focus exclusively on shooting new materials.">Если ты не знаешь иностранных языков, ничего страшного. В команде OWN AGENCY Agency есть профессионалы-секстеры, которые ведут переписку. Ты, как создатель контента, можешь заниматься исключительно съёмками новых материалов.</div></div></div>
+      <div class="faq-item rv open"><div class="fq"><span data-ru="Требуется ли знание английского?" data-en="Is English proficiency required?">Требуется ли знание английского?</span><div class="ftog">▾</div></div><div class="fa"><div class="fai" data-ru="Если ты не знаешь иностранных языков, ничего страшного. В команде thisglamourhub есть профессионалы-секстеры, которые ведут переписку. Ты, как создатель контента, можешь заниматься исключительно съёмками новых материалов." data-en="If you don't speak foreign languages, that's perfectly fine. The thisglamourhub team has professional sexters who handle correspondence. As a content creator, you can focus exclusively on shooting new materials.">Если ты не знаешь иностранных языков, ничего страшного. В команде thisglamourhub есть профессионалы-секстеры, которые ведут переписку. Ты, как создатель контента, можешь заниматься исключительно съёмками новых материалов.</div></div></div>
     </div>
   </div>
 </section>
@@ -674,7 +856,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
       </div>
       <div class="soc-card rv">
         <div class="soc-thumb"><img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=500&q=80&fit=crop" alt="Telegram" loading="lazy"></div>
-        <div class="soc-handle"><div class="sico-tg"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>@own agency_agency</div>
+        <div class="soc-handle"><div class="sico-tg"><svg width="12" height="12" viewBox="0 0 24 24" fill="#fff"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0h-.056zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg></div>@thisglamourhub_agency</div>
       </div>
     </div>
   </div>
@@ -685,12 +867,12 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
   <div class="container">
     <div class="cta-block">
       <div class="cta-left">
-        <h2 data-ru="Готова стать следующей ТОП-моделью Fansly/OnlyFans?" data-en="Ready to become the next TOP Fansly/OnlyFans model?">Готова стать следующей ТОП-моделью Fansly/OnlyFans?</h2>
+        <h2 data-ru="Готова стать следующей ТОП-моделью Fansly?" data-en="Ready to become the next TOP Fansly model?">Готова стать следующей ТОП-моделью Fansly?</h2>
         <p data-ru="Отправь анкету в Telegram-бот, и наш HR-менеджер свяжется с тобой. Расскажем, как можно увеличить доходы с первого месяца. Полная конфиденциальность гарантирована. Укажи в боте:" data-en="Send your application via the Telegram bot, and our HR manager will contact you. We'll tell you how to increase income from the first month. Full confidentiality guaranteed. In the bot, specify:">Отправь анкету в Telegram-бот, и наш HR-менеджер свяжется с тобой. Расскажем, как можно увеличить доходы с первого месяца. Полная конфиденциальность гарантирована. Укажи в боте:</p>
         <div class="cta-list">
           <div class="cta-item"><span data-ru="● Имя" data-en="● Name">● Имя</span></div>
           <div class="cta-item"><span data-ru="● Желаемый доход" data-en="● Desired income">● Желаемый доход</span></div>
-          <div class="cta-item"><span data-ru="● Есть ли аккаунт Fansly/OF" data-en="● Do you have a Fansly/OF account">● Есть ли аккаунт Fansly/OF</span></div>
+          <div class="cta-item"><span data-ru="● Есть ли аккаунт Fansly" data-en="● Do you have a Fansly account">● Есть ли аккаунт Fansly</span></div>
           <div class="cta-item"><span data-ru="● Цели" data-en="● Goals">● Цели</span></div>
         </div>
         <p class="cta-note" data-ru="Заполни анкету и начни путь к финансовой независимости уже сейчас!" data-en="Fill out the application and start your path to financial independence now!">Заполни анкету и начни путь к финансовой независимости уже сейчас!</p>
@@ -702,7 +884,7 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         <a href="https://t.me/ownagency_bot" target="_blank" class="cta-btn" style="text-decoration:none" data-ru="✈ Начать зарабатывать больше" data-en="✈ Start earning more">✈ Начать зарабатывать больше</a>
       </div>
       <div class="cta-right">
-        <img src="https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=700&q=85&fit=crop&crop=top" alt="Business woman" loading="lazy">
+        <img src="img/cta.jpg" alt="Top model" loading="lazy">
       </div>
     </div>
   </div>
@@ -711,12 +893,12 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
 <!-- -- VACANCIES -- -->
 <section id="vacancies" class="vac-section">
   <div class="container">
-    <h2 class="rv" data-ru="Вакансии <span class='blue'>агентства OWN AGENCY</span>" data-en="Vacancies at <span class='blue'>OWN AGENCY Agency</span>">Вакансии <span class="blue">агентства OWN AGENCY</span></h2>
+    <h2 class="rv" data-ru="Вакансии <span class='blue'>агентства thisglamourhub</span>" data-en="Vacancies at <span class='blue'>thisglamourhub</span>">Вакансии <span class="blue">агентства thisglamourhub</span></h2>
     <p class="vac-sub rv" data-ru="Мы всегда находимся в поиске талантов — выбери работу по душе." data-en="We are always looking for talent — choose a job you love.">Мы всегда находимся в поиске талантов — выбери работу по душе.</p>
     <div class="vac-list">
       <div class="vac-card rv"><h3 data-ru="Модельный скаут" data-en="Model Scout">Модельный скаут</h3><p data-ru="Оплата: сдельная и договорная — за каждую приведённую модель. 20000 ₽,..." data-en="Payment: per-model and negotiable — for each recruited model. 20000 RUB,...">Оплата: сдельная и договорная — за каждую приведённую модель. 20000 ₽,...</p><a href="vacancy-scout.html" class="vac-link" data-ru="Подробнее ›" data-en="Learn more ›">Подробнее ›</a></div>
       <div class="vac-card rv"><h3 data-ru="Секстер" data-en="Sexter">Секстер</h3><p data-ru="График: 5 рабочих дней на выбор (2 выходных — любые) Оплата:..." data-en="Schedule: 5 working days of your choice (2 days off — any) Payment:...">График: 5 рабочих дней на выбор (2 выходных — любые) Оплата:...</p><a href="vacancy-sexter.html" class="vac-link" data-ru="Подробнее ›" data-en="Learn more ›">Подробнее ›</a></div>
-      <div class="vac-card rv"><h3 data-ru="OnlyFans-модель (девушка)" data-en="OnlyFans model (female)">OnlyFans-модель (девушка)</h3><p data-ru="Возраст: от 18 до 35 лет Обязанности: Что нужно: Приветствуется: Типажи,..." data-en="Age: 18 to 35 years old Responsibilities: Requirements: Welcome: Types,...">Возраст: от 18 до 35 лет Обязанности: Что нужно: Приветствуется: Типажи,...</p><a href="vacancy-model.html" class="vac-link" data-ru="Подробнее ›" data-en="Learn more ›">Подробнее ›</a></div>
+      <div class="vac-card rv"><h3 data-ru="Fansly-модель (девушка)" data-en="Fansly model (female)">Fansly-модель (девушка)</h3><p data-ru="Возраст: от 18 до 35 лет Обязанности: Что нужно: Приветствуется: Типажи,..." data-en="Age: 18 to 35 years old Responsibilities: Requirements: Welcome: Types,...">Возраст: от 18 до 35 лет Обязанности: Что нужно: Приветствуется: Типажи,...</p><a href="vacancy-model.html" class="vac-link" data-ru="Подробнее ›" data-en="Learn more ›">Подробнее ›</a></div>
     </div>
   </div>
 </section>
@@ -726,13 +908,12 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
   <div class="container">
     <div class="footer-grid">
       <div class="rv">
-        <div class="flogo"><div class="nav-dot"></div>OWN AGENCY</div>
-        <p class="flogo-desc" data-ru="OWN AGENCY Agency — помогать контент-креаторам достигать финансовой независимости, выводя их аккаунты в топ. Для нас важен персональный подход: каждая модель получает индивидуальную стратегию." data-en="OWN AGENCY Agency — helping content creators achieve financial independence by bringing their accounts to the top. We value a personal approach: each model receives an individual strategy.">OWN AGENCY Agency — помогать контент-креаторам достигать финансовой независимости, выводя их аккаунты в топ. Для нас важен персональный подход: каждая модель получает индивидуальную стратегию.</p>
+        <div class="flogo"><div class="nav-dot"></div>thisglamourhub</div>
+        <p class="flogo-desc" data-ru="thisglamourhub — помогать контент-креаторам достигать финансовой независимости, выводя их аккаунты в топ. Для нас важен персональный подход: каждая модель получает индивидуальную стратегию." data-en="thisglamourhub — helping content creators achieve financial independence by bringing their accounts to the top. We value a personal approach: each model receives an individual strategy.">thisglamourhub — помогать контент-креаторам достигать финансовой независимости, выводя их аккаунты в топ. Для нас важен персональный подход: каждая модель получает индивидуальную стратегию.</p>
       </div>
       <div class="fnav rv">
         <h4 data-ru="Меню" data-en="Menu">Меню</h4>
         <ul>
-          <li><a href="#services">OnlyFans</a></li>
           <li><a href="#services">Fansly</a></li>
           <li><a href="#vacancies" data-ru="Вакансии" data-en="Vacancies">Вакансии</a></li>
           <li><a href="#faq" data-ru="Блог" data-en="Blog">Блог</a></li>
@@ -748,17 +929,17 @@ footer{background:#fff;padding:56px 0 28px;border-top:1px solid var(--gray2)}
         </div>
       </div>
     </div>
-    <div class="fbottom" data-ru="©2026 OWN AGENCY Agency. OnlyFans &amp; Fansly Агентство для моделей и креаторов" data-en="©2026 OWN AGENCY Agency. OnlyFans &amp; Fansly Agency for models and creators">©2026 OWN AGENCY Agency. OnlyFans &amp; Fansly Агентство для моделей и креаторов</div>
+    <div class="fbottom" data-ru="©2026 thisglamourhub. Fansly Агентство для моделей и креаторов" data-en="©2026 thisglamourhub. Fansly Agency for models and creators">©2026 thisglamourhub. Fansly Агентство для моделей и креаторов</div>
   </div>
 </footer>
 
 <script>
 // -- Language Switcher --
-let currentLang = localStorage.getItem('own agency-lang') || 'ru';
+let currentLang = localStorage.getItem('thisglamourhub-lang') || 'ru';
 
 function switchLang(lang) {
   currentLang = lang;
-  localStorage.setItem('own agency-lang', lang);
+  localStorage.setItem('thisglamourhub-lang', lang);
   document.querySelectorAll('[data-ru]').forEach(el => {
     const text = el.getAttribute('data-' + lang);
     if (text !== null) {
@@ -814,7 +995,9 @@ window.addEventListener('scroll', () => {
 const heroImg = document.getElementById('heroImg');
 setTimeout(() => heroImg.classList.add('loaded'), 100);
 window.addEventListener('scroll', () => {
-  heroImg.style.transform = `translateY(${window.scrollY * 0.35}px) scale(1)`;
+  const maxScroll = window.innerHeight;
+  const scrollY = Math.min(window.scrollY, maxScroll);
+  heroImg.style.transform = `translateY(${scrollY * 0.15}px) scale(1.05)`;
 });
 
 // -- Set random model count on each page load (400-600) --
@@ -892,7 +1075,8 @@ function updateCalc() {
   const cb = 1 + (content - 10) / 240 * 1.2;
   const mb = 1 + months / 24 * 1.5;
   const eb = 1 + exp / 24 * 0.5;
-  const result = Math.round(income * engVal * cb * mb * eb * reddit / 100) * 100;
+  const base = income > 0 ? income : 500;
+  const result = Math.round(base * engVal * cb * mb * eb * reddit / 100) * 100;
   animateResult(document.getElementById('c-result'), result);
 }
 ['c-income','c-months','c-content','c-exp','c-reddit'].forEach(id =>
